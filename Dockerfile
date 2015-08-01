@@ -9,7 +9,8 @@ RUN pecl config-set preferred_state alpha
 RUN touch /usr/local/etc/php/php.ini
 
 # Install PHP Libevent
-RUN apt-get install libevent libevent-dev && pecl install libevent && echo "extension=libevent.so" > /usr/local/etc/php/conf.d/libevent.ini
+RUN RUN cd /usr/local/src && https://sourceforge.net/projects/levent/files/libevent/libevent-2.0/libevent-2.0.22-stable.tar.gz && tar -xvzf libevent-2.0.22-stable.tar.gz && rm *.gz && cd libevent-2.0.22-stable && ./configure && make && make install 
+RUN pecl install libevent && echo "extension=libevent.so" > /usr/local/etc/php/conf.d/libevent.ini
 
 # Install ZeroMQ
 RUN apt-get install -y libzmq3-dev
