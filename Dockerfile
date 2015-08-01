@@ -7,8 +7,6 @@ RUN pecl config-set preferred_state alpha
 
 # allow manipulation with ENV variables
 RUN touch /usr/local/etc/php/php.ini
-# Install PHP Curl
-RUN pecl install curl  && echo "extension=curl.so" > /usr/local/etc/php/conf.d/curl.ini
 
 # Install PHP Libevent
 RUN apt-get install libevent libevent-dev && pecl install libevent && echo "extension=libevent.so" > /usr/local/etc/php/conf.d/libevent.ini
