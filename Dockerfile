@@ -19,4 +19,4 @@ RUN pecl install zmq-beta && echo "extension=zmq.so" > /usr/local/etc/php/conf.d
 #Install PHP Zip
 RUN cd /usr/local/src && wget http://zlib.net/zlib-1.2.8.tar.gz && tar -xvzf zlib-1.2.8.tar.gz && rm *.gz && cd zlib-1.2.8 && ./configure && make && make install && docker-php-ext-install zip
 
-RUN curl -sS http://getcomposer.org/installer | php -- --install-dir=/usr/local/lib --filename=composer 
+RUN curl -sS http://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer 
