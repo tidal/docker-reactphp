@@ -1,5 +1,4 @@
-ENV PHP_MINOR_VERSION 5.6
-FROM php:$PHP_MINOR_VERSION-cli
+FROM php:5.6-cli
 # Prepare basic deps
 RUN apt-get update && apt-get install -y  apt-utils wget curl build-essential
 
