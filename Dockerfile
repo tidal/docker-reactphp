@@ -1,4 +1,4 @@
-FROM php:7.1-cli
+FROM php:5.6-cli
 # Prepare basic deps
 RUN apt-get update && apt-get install -y  apt-utils wget curl build-essential
 
