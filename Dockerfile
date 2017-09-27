@@ -18,7 +18,7 @@ RUN apt-get install -y libzmq3-dev
 RUN pecl install zmq-beta && echo "extension=zmq.so" > /usr/local/etc/php/conf.d/zeromq.ini
 
 #Install PHP Zlib
-ENV ZLIB_VERSION 1.2.8
+ENV ZLIB_VERSION 1.2.11
 RUN cd /usr/local/src && wget http://zlib.net/zlib-$ZLIB_VERSION.tar.gz && tar -xvzf zlib-$ZLIB_VERSION.tar.gz && rm *.gz && cd zlib-$ZLIB_VERSION && ./configure && make && make install && docker-php-ext-install zip
 
 RUN curl -sS http://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer 
